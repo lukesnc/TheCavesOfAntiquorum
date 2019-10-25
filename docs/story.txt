@@ -1,0 +1,23 @@
+Storyboard for The Caves of Antiquorum
+Original Story by Joseph Alberici
+
+Act 1 - Player in room, wanders about. First key in tunneling. Wall collapses in behind him. 
+
+Act 2 - Player needs to find out how to clear the rubble and ends up getting lost in the cave (can’t even find the rubble). 
+Once they find an explosive device they will realize they can’t get back to the original path
+
+Act 3 - The player discovers more lore surrounding their environment and finds out its a pocket dimension controlled by 
+a Sea God which manifests itself as the beast the player sees in hieroglyphics. This is all very fragmented 
+information and subtle. This act concludes with the player finding a weapon.
+
+Act 4 - Combat system is put in place. They explore the caves and uncover secrets about how to defeat the Sea God. 
+At the end of this act they face a mini boss which is another human the “Apostle of the Sea God”
+
+Act 5 - The Sea God has been angered with the death of his Apostle. The caves around the player start 
+to crumble away and the player can make physical contact with the god. The souls of all those who died in 
+the cave aid the player by forming the armor of Liberation. 
+
+Act 6 - The player faces the Sea God 
+
+Epilogue - After defeating the Sea God the player wakes up back in the original room with a key called the 
+Heart of Gold which unlocks the original door
