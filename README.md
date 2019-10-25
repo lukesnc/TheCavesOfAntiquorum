@@ -1,6 +1,6 @@
 # The Caves of Antiquorum
 
-## A small text-based RPG by Joseph Alberici and Luke Simone
+_A small text-based RPG by Joseph Alberici and Luke Simone_
 
 Developed in Mr. Honeycutt's 4th period Python Programming class at Fuquay-Varina High School
 
