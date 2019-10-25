@@ -10,11 +10,11 @@ class Dynamite:
   name = "dynamite stick"
 
 class JaggedRock:
-  ID = 2
+  ID = 9
   name = "jagged rock"
+  damage = 1
 
   def __init__(self):
-    self.damage = 1
     self.durability = 3
 
   def itemBreak(self):
@@ -27,3 +27,15 @@ class JaggedRock:
       return 1
     else:
       self.itemBreak() 
+
+class BrokenWheel:
+  ID = 3
+  name = "broken wheel"
+  damage = 1
+
+  def __init__(self):
+    self.durability = 3
+
+  def swing(self):
+    self.durability -= 1
+    
