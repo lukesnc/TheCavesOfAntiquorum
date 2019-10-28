@@ -6,4 +6,4 @@ Developed in Mr. Honeycutt's 4th period Python Programming class at Fuquay-Varin
 
 To start the game simply launch TheCavesOfAntiquorum.py
 
-Progress is written to \TheCavesOfAntiquorum\save.txt
+Progress is written to \TheCavesOfAntiquorum\save\save.txt

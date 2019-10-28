@@ -1,10 +1,12 @@
 # Colection of game-wide functions
 
 # includes
-from time import sleep
 from TheCavesOfAntiquorum import const
+
+from time import sleep
 import sys
 from shutil import copyfile
+import pickle
 
 # Displays when user doesn't put in what the game is looking for
 def inputError(text):
@@ -83,3 +85,8 @@ def startAct(act):
 #   else:
 #     save.write("DYNAMITE=0\n")
 #   save.close()
+
+# Pass in object of class Player to save to a file
+def savePlayer(obj):
+  with open(const.PLAYER_OBJ_PATH, 'wb') as output:
+    pickle.dump(obj, output, pickle.HIGHEST_PROTOCOL)
