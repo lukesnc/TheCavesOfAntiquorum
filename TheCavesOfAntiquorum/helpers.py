@@ -15,6 +15,7 @@ def inputError(text):
   else:
     printSlow("ERROR - Please use exact phrasing...\n\n")
 
+# Quits the game
 def shutDown():
   print("Quitting game...")
   sleep(.5)
@@ -73,6 +74,7 @@ def startAct(act):
   #else:
     # last act or end game
 
+# Function to write any item to save file
 # def writeItemToSave(itemID):
 #   # Write item to save file
 #   save = open(const.SAVE_PATH, 'a')

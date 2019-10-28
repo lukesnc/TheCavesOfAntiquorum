@@ -26,6 +26,7 @@ def writeDynamiteToSave():
   printSlow("\nSave file updated.\n")
   sleep(1)
 
+# Final text and starts act 3
 def endOfAct2():
   writeDynamiteToSave()
   sleep(2)
@@ -41,6 +42,7 @@ def endOfAct2():
   del p1
   startAct(3)
 
+# Player can choose to find explosive on the ground
 def findExplosive():
   print("\nyou take a step back and hit your head")
   sleep(1)
