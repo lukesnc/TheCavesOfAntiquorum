@@ -48,7 +48,7 @@ def findExplosive():
   sleep(1)
   print("\"what the fuck\" you exclaim out loud")
   sleep(2)
-  print("that wall was not there before, and the cieling was definitely not that low\n")
+  print("that wall was not there before, and the ceiling was definitely not that low\n")
   sleep(3)
   print("you turn around once more, this time you notice something on the ground\n")
   sleep(2)

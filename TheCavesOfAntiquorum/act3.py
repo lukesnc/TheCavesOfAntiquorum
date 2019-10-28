@@ -17,11 +17,9 @@ weapon = 0
 
 def start():
   clearScreen()
-  printSlow("=========================\n")
-  printSlow("==========ACT=3==========\n")
-  printSlow("=========================\n")
+  printSlow("======ACT=3======\n")
   sleep(1)
-  printSlow("\nENTER to continue...\n")
+  printSlow("\n.....")
   input()
   clearScreen()
   sleep(3)

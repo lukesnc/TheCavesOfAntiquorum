@@ -1,13 +1,18 @@
 # Items database
 # Every items needs an item ID which will be stored in the users inventory if they have the item
 
+# includes
+from time import sleep
+
 class UselessKey:
   ID = 1
   name = "bronze key"
 
+
 class Dynamite:
   ID = 2
   name = "dynamite stick"
+
 
 class JaggedRock:
   ID = 9
@@ -28,6 +33,7 @@ class JaggedRock:
     else:
       self.itemBreak() 
 
+
 class BrokenWheel:
   ID = 3
   name = "broken wheel"
@@ -38,4 +44,6 @@ class BrokenWheel:
 
   def swing(self):
     self.durability -= 1
-    
+    print("you swing the broken wheel")
+    sleep(1)
+    print("it deals 1 damage")

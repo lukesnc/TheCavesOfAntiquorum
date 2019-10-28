@@ -1,6 +1,5 @@
 # The Caves of Antiquorum
 # Main file / act 1
-# Save file created as 'save.txt'
 
 # includes
 from time import sleep

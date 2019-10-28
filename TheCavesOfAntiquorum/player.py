@@ -9,6 +9,8 @@ class Player:
     self.name = ""
     self.health = 3
     self.armor = False 
+
+    # Inventory operates on a list of item IDs
     self.inventory = []
 
     self.getInventory()
