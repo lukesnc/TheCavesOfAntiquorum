@@ -32,7 +32,7 @@ def endOfAct2():
   sleep(2)
   print("\ndespite the cave seeming to change on its own, you find a way back to the rubble")
   sleep(1)
-  print("the rubble seems more built up, almost no light is comeing through now")
+  print("the rubble seems more built up, almost no light is coming through at this point")
   sleep(1)
   printSlow("\na way back through may not be possible...\n")
   sleep(3)
