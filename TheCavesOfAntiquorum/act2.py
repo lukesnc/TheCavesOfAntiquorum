@@ -80,9 +80,10 @@ def findExplosive():
       sleep(1)
       print("the paths have been changing\n")
       sleep(1)
-      printVerySlow("what is going on?\n")
+      printSlow("what is going on?\n")
       sleep(3)
-      endOfAct2()
+
+      # FINISH THIS
       break
     inputError(option)
 
@@ -98,7 +99,7 @@ def jump():
   print("you're dangling out over the ledge, staring down at the void")
   sleep(5)
   clearScreen()
-  print("the blackness is calling out to you, urging you forward")
+  printSlow("the blackness is calling out to you, urging you forward\n")
   sleep(2)
   print("you feel a deep rumble throughout the cavern\n")
   sleep(6)
