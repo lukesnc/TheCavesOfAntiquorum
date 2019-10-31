@@ -7,6 +7,7 @@
 
 # includes
 from time import sleep
+from random import randint
 
 from TheCavesOfAntiquorum import player, items, const
 from TheCavesOfAntiquorum.helpers import clearScreen, inputError, printSlow, printVerySlow

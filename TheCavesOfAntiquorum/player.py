@@ -7,7 +7,7 @@ class Player:
   def __init__(self):
     # Player variables (not regardless of instance)
     self.name = ""
-    self.health = 3
+    self.health = 5
     self.armor = False 
 
     # Inventory operates on a list of item IDs
@@ -16,9 +16,10 @@ class Player:
     self.getInventory()
 
   def getName(self):
-    # User inputs name
-    n = input("Enter your name: ")
-    self.name = n
+    # User has no choice here
+    input("Enter your name: ")
+    print("your name is now joe")
+    self.name = "joe"
 
   # Loads the users inventory based on save file
   def getInventory(self):
