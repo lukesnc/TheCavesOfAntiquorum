@@ -75,11 +75,11 @@ class Stick:
 
 class Stone:
   ID = 62
-  name "stone"
+  name = "stone"
   damage = 2
 
 class Club:
   ID = 63
-  name "wooden club"
+  name = "wooden club"
   damage = 3
 
