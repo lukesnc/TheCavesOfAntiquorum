@@ -44,6 +44,9 @@ def endOfAct2():
 
 # Player can choose to find explosive on the ground
 def findExplosive():
+  global dynamite
+  dynamite = 1
+
   print("\nyou take a step back and hit your head")
   sleep(1)
   print("\"what the fuck\" you exclaim out loud")
@@ -60,9 +63,6 @@ def findExplosive():
     option = input("> ")
 
     if option == "yes":
-      global dynamite
-      dynamite = 1
-
       print("you walk over and reach down\n")
       sleep(1)
       printSlow("picked up: " + items.Dynamite.name + "\n")
@@ -82,8 +82,16 @@ def findExplosive():
       sleep(1)
       printSlow("what is going on?\n")
       sleep(3)
-
-      # FINISH THIS
+      
+      print("you fall down, on your knees, trembling\n")
+      sleep(1)
+      print("you move your hands around and feel something, you grab it")
+      sleep(1)
+      printSlow("picked up: " + items.Dynamite.name + "\n")
+      sleep(1)
+      print("what do i need this for?")
+      sleep(2)
+      endOfAct2()
       break
     inputError(option)
 

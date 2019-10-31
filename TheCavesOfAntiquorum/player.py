@@ -15,6 +15,10 @@ class Player:
 
     self.getInventory()
 
+  def getName(self):
+    # User inputs name
+    n = input("Enter your name: ")
+    self.name = n
 
   # Loads the users inventory based on save file
   def getInventory(self):
