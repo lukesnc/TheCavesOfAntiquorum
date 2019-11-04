@@ -90,3 +90,13 @@ def startAct(act):
 def savePlayer(obj):
   with open(const.PLAYER_OBJ_PATH, 'wb') as output:
     pickle.dump(obj, output, pickle.HIGHEST_PROTOCOL)
+  output.close()
+
+# Reloads object of player from file with a RETURN so
+# set object in story equal to this function
+def loadPlayer():
+  with open(const.PLAYER_OBJ_PATH, 'rb') as infile:
+    loadedObj = pickle.load(infile)
+  infile.close()
+  return loadedObj
+  

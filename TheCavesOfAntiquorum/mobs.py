@@ -1,5 +1,8 @@
 # NPC database
 
+from TheCavesOfAntiquorum import items
+from random import randint
+
 class TestEnemy:
   name = "bad boy"
   damage = 1
@@ -19,17 +22,17 @@ class Rat:
   name = "rat"
   
   def __init__(self):
-    self.health = 1
+    self.health = 5
 
 class Spider:
   name = "spider"
 
   def __init__(self):
-    self.health = 2
+    self.health = 10
 
 class UndeadSoldier:
   name = "undead soldier"
   damage = 2
 
   def __init__(self):
-    self.health = 3
+    self.health = 15

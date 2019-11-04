@@ -1,9 +1,9 @@
 # Act 3
 
 # KEY FEATURES
-# inventory
+# inventory and equipment
 # more lore of game explored
-# weapon found at the end
+# combat and enemies
 
 # includes
 from time import sleep

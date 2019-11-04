@@ -48,10 +48,19 @@ class Fists:
       self.damage = .5
 
 
+class Dagger:
+  ID = 5
+  name = "rusty dagger"
+  damage = 4
+
+  def __init__(self):
+    self.durability = 3
+
+
 class BrokenWheel:
   ID = 3
   name = "broken wheel"
-  damage = 1.5
+  damage = 4
 
   def __init__(self):
     self.durability = 3
@@ -71,15 +80,15 @@ class BrokenWheel:
 class Stick:
   ID = 61
   name = "stick"
-  damage = 1
+  damage = 5
 
 class Stone:
   ID = 62
   name = "stone"
-  damage = 2
+  damage = 3
 
 class Club:
   ID = 63
   name = "wooden club"
-  damage = 3
+  damage = 7
 

@@ -7,7 +7,7 @@ class Player:
   def __init__(self):
     # Player variables (not regardless of instance)
     self.name = ""
-    self.health = 5
+    self.health = 15
 
     # Inventory operates on a list of item IDs
     self.inventory = []
