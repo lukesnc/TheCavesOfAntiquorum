@@ -42,7 +42,7 @@ def endOfAct2():
   del p1
   startAct(3)
 
-# Player can choose to find explosive on the ground
+# Player will find explosive on the ground
 def findExplosive():
   global dynamite
   dynamite = 1
@@ -132,7 +132,7 @@ def jump():
       findExplosive()
       break
     elif option == "back" or option == "go back":
-      print("you decide jumping off of a clif might have been a bad idea")
+      print("you decide jumping off of a cliff might have been a bad idea")
       sleep(2)
       print("you turn to head back")
       sleep(2)

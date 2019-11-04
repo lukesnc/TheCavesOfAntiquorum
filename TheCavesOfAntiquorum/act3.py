@@ -16,6 +16,8 @@ from TheCavesOfAntiquorum.helpers import clearScreen, inputError, printSlow, pri
 p1 = player.Player()
 weapon = 0
 
+
+
 def start():
   clearScreen()
   printSlow("======ACT=3======\n")

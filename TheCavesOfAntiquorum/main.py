@@ -1,4 +1,6 @@
 # The Caves of Antiquorum
+# Author: Luke Simone
+
 # Main file / act 1
 
 # includes
