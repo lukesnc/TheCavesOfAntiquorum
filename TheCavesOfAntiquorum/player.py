@@ -8,12 +8,15 @@ class Player:
     # Player variables (not regardless of instance)
     self.name = ""
     self.health = 5
-    self.armor = False 
 
     # Inventory operates on a list of item IDs
     self.inventory = []
-
     self.getInventory()
+
+    # Equipment
+    self.weapon = 0
+    self.armor = False 
+
 
   def getName(self):
     # User has no choice here
