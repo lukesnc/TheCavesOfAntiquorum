@@ -4,6 +4,8 @@
 # includes
 from time import sleep
 
+# GENERAL ITEMS
+
 class UselessKey:
   ID = 1
   name = "bronze key"
@@ -13,26 +15,8 @@ class Dynamite:
   ID = 2
   name = "dynamite stick"
 
-
-class JaggedRock:
-  ID = 9
-  name = "jagged rock"
-  damage = 1
-
-  def __init__(self):
-    self.durability = 3
-
-  def itemBreak(self):
-    print("the jagged rock broke")
-    return 0
-
-  def attack(self, durability):
-    if self.durability != 0:
-      self.durability = self.durability - 1
-      return 1
-    else:
-      self.itemBreak() 
-
+# PLAYER WEAPONS
+# Player weapons CAN break
 
 class Fists:
   ID = 4
@@ -65,17 +49,10 @@ class BrokenWheel:
   def __init__(self):
     self.durability = 3
 
-  def swing(self):
-    self.durability -= 1
-    print("you swing the broken wheel")
-    sleep(1)
-    print("it deals 1 damage")
-
-
 
 # ENEMY WIELDED ITEMS
 # ITEM IDs BEGIN WITH 6
-
+# Enemy items DON'T break
 
 class Stick:
   ID = 61
