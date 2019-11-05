@@ -1,6 +1,7 @@
 # NPC database
 
 from TheCavesOfAntiquorum import items
+from TheCavesOfAntiquorum.helpers import getRandomEnemyWeapon
 from random import randint
 
 class TestEnemy:
@@ -32,7 +33,14 @@ class Spider:
 
 class UndeadSoldier:
   name = "undead soldier"
-  damage = 2
 
   def __init__(self):
     self.health = 15
+    self.weapon = getRandomEnemyWeapon()
+    
+  def attack(self):
+    return self.weapon.damage
+
+  def takeDamage(self, damage):
+    self.health = self.health - damage
+
