@@ -42,3 +42,19 @@ class Player:
     if "DYNAMITE=1" in save.read():
       self.inventory.append(items.Dynamite.ID)
     save.close()
+
+
+  # COMBAT
+
+  def attack(self):
+    try:
+      if weapon.durability > 0:
+        return self.weapon.damage
+      else:
+        print("your " + self.weapon.name + " broke")
+    except:
+      print("you have no weapon")
+
+  def takeDamage(self, damage):
+    self.health = self.health - damage
+    
