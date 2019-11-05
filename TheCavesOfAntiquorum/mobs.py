@@ -1,23 +1,22 @@
 # NPC database
 
 from TheCavesOfAntiquorum import items
-from TheCavesOfAntiquorum.helpers import getRandomEnemyWeapon
+from TheCavesOfAntiquorum import const
 from random import randint
 
-class TestEnemy:
-  name = "bad boy"
-  damage = 1
+# Returns a random weapon for newly spawned enemy to hold
+def getRandomWeapon():
+  # Dictionary of enemy weapons
+  enemyWeapon = {
+    items.Stick.ID: items.Stick(),
+    items.Stone.ID: items.Stone(),
+    items.Club.ID: items.Club()
+  }
 
-  def __init__(self):
-    self.health = 3
-    self.isAlive = True
+  w = randint(const.ENEMY_WEAPON_ID_MIN, const.ENEMY_WEAPON_ID_MAX)
+  return enemyWeapon[w]
 
-    # Looping interaction
-    while self.isAlive:
-      self.attack()
-
-  def attack(self):
-    print("take damage somehow")
+# ENEMIES 
     
 class Rat:
   name = "rat"
@@ -36,7 +35,7 @@ class UndeadSoldier:
 
   def __init__(self):
     self.health = 15
-    self.weapon = getRandomEnemyWeapon()
+    self.weapon = getRandomWeapon()
     
   def attack(self):
     return self.weapon.damage

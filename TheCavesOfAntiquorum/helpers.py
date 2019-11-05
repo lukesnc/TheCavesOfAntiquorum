@@ -92,14 +92,3 @@ def loadPlayer():
   infile.close()
   return loadedObj
 
-# Returns a random weapon for newly spawned enemy to hold
-def getRandomEnemyWeapon():
-  # Dictionary of enemy weapons
-  enemyWeapon = {
-    items.Stick.ID: items.Stick(),
-    items.Stone.ID: items.Stone(),
-    items.Club.ID: items.Club()
-  }
-
-  w = randint(const.ENEMY_WEAPON_ID_MIN, const.ENEMY_WEAPON_ID_MAX)
-  return enemyWeapon[w]
