@@ -2,11 +2,13 @@
 
 # includes
 from TheCavesOfAntiquorum import const
+from TheCavesOfAntiquorum import items
 
 from time import sleep
 import sys
 from shutil import copyfile
 import pickle
+from random import randint
 
 # Displays when user doesn't put in what the game is looking for
 def inputError(text):
@@ -76,16 +78,6 @@ def startAct(act):
   #else:
     # last act or end game
 
-# Function to write any item to save file
-# def writeItemToSave(itemID):
-#   # Write item to save file
-#   save = open(const.SAVE_PATH, 'a')
-#   if itemID == 1:
-#     save.write("=1\n")
-#   else:
-#     save.write("DYNAMITE=0\n")
-#   save.close()
-
 # Pass in object of class Player to save to a file
 def savePlayer(obj):
   with open(const.PLAYER_OBJ_PATH, 'wb') as output:
@@ -99,4 +91,15 @@ def loadPlayer():
     loadedObj = pickle.load(infile)
   infile.close()
   return loadedObj
-  
+
+# Returns a random weapon for newly spawned enemy to hold
+def getRandomEnemyWeapon():
+  # Dictionary of enemy weapons
+  enemyWeapon = {
+    items.Stick.ID: items.Stick(),
+    items.Stone.ID: items.Stone(),
+    items.Club.ID: items.Club()
+  }
+
+  w = randint(const.ENEMY_WEAPON_ID_MIN, const.ENEMY_WEAPON_ID_MAX)
+  return enemyWeapon[w]
