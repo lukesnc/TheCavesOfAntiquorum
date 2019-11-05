@@ -6,11 +6,10 @@
 # combat and enemies
 
 # includes
-from time import sleep
-from random import randint
-
 from TheCavesOfAntiquorum import player, items, const
 from TheCavesOfAntiquorum.helpers import clearScreen, inputError, printSlow, printVerySlow
+
+from time import sleep
 
 # Globals
 p1 = player.Player()

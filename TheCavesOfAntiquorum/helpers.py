@@ -2,13 +2,11 @@
 
 # includes
 from TheCavesOfAntiquorum import const
-from TheCavesOfAntiquorum import items
 
 from time import sleep
 import sys
 from shutil import copyfile
 import pickle
-from random import randint
 
 # Displays when user doesn't put in what the game is looking for
 def inputError(text):

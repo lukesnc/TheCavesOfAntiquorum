@@ -5,10 +5,10 @@
 # inventory (player can't access but it's there)
 
 # includes
-from time import sleep
-
 from TheCavesOfAntiquorum import player, items, const
 from TheCavesOfAntiquorum.helpers import clearScreen, inputError, printSlow, printVerySlow, startAct
+
+from time import sleep
 
 # Creates an object of player
 p1 = player.Player()

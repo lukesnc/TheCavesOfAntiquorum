@@ -4,10 +4,10 @@
 # 
 
 # includes
-from time import sleep
-
 from TheCavesOfAntiquorum import player, items, const
 from TheCavesOfAntiquorum.helpers import clearScreen, inputError, printSlow, printVerySlow
+
+from time import sleep
 
 # Globals
 
