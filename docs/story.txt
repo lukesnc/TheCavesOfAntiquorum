@@ -4,20 +4,30 @@ Original Story by Joseph Alberici
 Act 1 - Player in room, wanders about. First key in tunneling. Wall collapses in behind him. 
 
 Act 2 - Player needs to find out how to clear the rubble and ends up getting lost in the cave (can’t even find the rubble). 
-Once they find an explosive device they will realize they can’t get back to the original path
+Once they find an explosive device they head back to the original point
 
-Act 3 - The player discovers more lore surrounding their environment and finds out its a pocket dimension controlled by 
-a Sea God which manifests itself as the beast the player sees in hieroglyphics. This is all very fragmented 
-information and subtle. This act concludes with the player finding a weapon.
+Act 3 - The player tries to destroy the rubble and finds a room marked with weird slimy tentacle like appendages 
+rising from the ground. The word “Arenam” marks the opposite side of the room and in the middle of the room there 
+is a podium with a shitty dagger laying on it. The player discovers more lore surrounding their environment as they 
+explore this area. There is a book on the ground in one of the hallways, if they read it they find out its a pocket 
+dimension controlled by a Sea God which manifests itself as the beast the player sees in hieroglyphics. This is all 
+very fragmented information and subtle. There are enemies in certain rooms, often like large rats and spiders, but 
+occasionally the undead. The undead usually have better gear, but are extremely hard to kill in the beginning of 
+this act. However, if the player dies they start at the beginning of act 3 with the weapons they have encountered. 
+There should be a RNG for what type of equipment the undead have with good weapons being rare. You could implement 
+this into the text by having a quote “Undead soldier wields ” + rngWeapon where rngWeapon is a string that corresponds 
+to an RNG number. Each weapon should just have an attack and durability stat. If you want to implement armor go for 
+it, I don’t think armor should have durability. Durability will also be RNG and decreases by one every time the player 
+attacks, when it reaches zero the weapon is no longer usable. Fists should do the minimum damage. 
 
-Act 4 - Combat system is put in place. They explore the caves and uncover secrets about how to defeat the Sea God. 
-At the end of this act they face a mini boss which is another human the “Apostle of the Sea God”
+Act 4 - `They explore the caves and uncover secrets about how to defeat the Sea God. At the end of this act they 
+face a mini boss which is another human the “Apostle of the Sea God”
 
-Act 5 - The Sea God has been angered with the death of his Apostle. The caves around the player start 
-to crumble away and the player can make physical contact with the god. The souls of all those who died in 
-the cave aid the player by forming the armor of Liberation. 
+Act 5 - The Sea God has been angered with the death of his Apostle. The caves around the player start to crumble 
+away and the player can make physical contact with the god. The souls of all those who died in the cave aid the player 
+by forming the armor of Liberation. 
 
 Act 6 - The player faces the Sea God 
 
-Epilogue - After defeating the Sea God the player wakes up back in the original room with a key called the 
-Heart of Gold which unlocks the original door
+Epilogue - After defeating the Sea God the player wakes up back in the original room with a key called the Heart 
+of Gold which unlocks the original door
