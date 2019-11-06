@@ -1,5 +1,6 @@
 # Contains class player which holds inventroy and other useful values
 
+# includes
 from TheCavesOfAntiquorum import const, items
 
 class Player:
@@ -46,6 +47,8 @@ class Player:
 
   # COMBAT
 
+  # Tests if there is a weapon, if its broken, and then returns damage 
+  # vaue to be used on the enemy's takeDamage() function
   def attack(self):
     try:
       if weapon.durability > 0:
@@ -55,6 +58,13 @@ class Player:
     except:
       print("you have no weapon")
 
+  # Take damage from enemy in as parameter and subtract from player health
   def takeDamage(self, damage):
     self.health = self.health - damage
-    
+    # Check if player health is 0 or below and then die, otherwise nothing
+    if self.health < 1:
+      self.die()
+
+  def die(self):
+    print("die")
+    # FINISH THIS

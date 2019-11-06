@@ -1,7 +1,6 @@
 # NPC database
 
-from TheCavesOfAntiquorum import items
-from TheCavesOfAntiquorum import const
+from TheCavesOfAntiquorum import items, const
 from random import randint
 
 # Returns a random weapon for newly spawned enemy to hold
