@@ -41,9 +41,9 @@ class Dagger:
     self.durability = 3
 
 
-class BrokenWheel:
+class BreakingWheel:
   ID = 3
-  name = "broken wheel"
+  name = "the breaking wheel"
   damage = 4
 
   def __init__(self):
