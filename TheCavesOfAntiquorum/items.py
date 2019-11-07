@@ -57,12 +57,12 @@ class BrokenWheel:
 class Stick:
   ID = 61
   name = "stick"
-  damage = 5
+  damage = 4
 
 class Stone:
   ID = 62
   name = "stone"
-  damage = 3
+  damage = 2
 
 class Club:
   ID = 63
