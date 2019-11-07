@@ -2,7 +2,7 @@
 # Every items needs an item ID which will be stored in the users inventory if they have the item
 
 # includes
-
+from random import randint
 
 # GENERAL ITEMS
 
@@ -58,14 +58,22 @@ class Stick:
   ID = 61
   name = "stick"
   damage = 4
+  
+  def __init__(self):
+    self.durability = randint(1, 3)
 
 class Stone:
   ID = 62
   name = "stone"
   damage = 2
 
+  def __init__(self):
+    self.durability = randint(1, 4)
+
 class Club:
   ID = 63
   name = "wooden club"
   damage = 7
 
+  def __init__(self):
+    self.durability = randint(1, 2)

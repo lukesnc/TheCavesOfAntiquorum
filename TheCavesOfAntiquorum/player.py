@@ -9,6 +9,7 @@ class Player:
     # Player variables (not regardless of instance)
     self.name = ""
     self.health = 15
+    self.MAX_HEALTH = 15
 
     # Inventory operates on a list of item IDs
     self.inventory = []
@@ -70,6 +71,11 @@ class Player:
     # Check if player health is 0 or below and then die, otherwise nothing
     if self.health < 1:
       self.die()
+
+  # Player eats enemies to regain health
+  def eat(self):
+    print("temp")
+    # FINISH THIS
 
   def die(self):
     print("die")
