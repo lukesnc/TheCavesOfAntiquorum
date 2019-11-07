@@ -18,3 +18,6 @@ ALIVE = 1
 
 # Armor damage change
 ARMOR_MOD = 0.5
+
+# Enemy is unkillable
+UNKILLABLE = 999
