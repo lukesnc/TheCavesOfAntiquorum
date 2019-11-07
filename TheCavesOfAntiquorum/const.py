@@ -15,3 +15,6 @@ PLAYER_OBJ_BACKUP_PATH = "TheCavesOfAntiquorum/save/player.obj.bak"
 # Returns from combat encounter
 DEAD = 0
 ALIVE = 1
+
+# Armor damage change
+ARMOR_MOD = 0.5

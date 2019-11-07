@@ -15,7 +15,7 @@ class Player:
     self.getInventory()
 
     # Equipment
-    self.weapon = 0
+    self.weapon = items.Fists()
     self.armor = False 
 
 
@@ -52,6 +52,7 @@ class Player:
   def attack(self):
     try:
       if weapon.durability > 0:
+        weapon.durability -= 1
         return self.weapon.damage
       else:
         print("your " + self.weapon.name + " broke")
@@ -60,7 +61,12 @@ class Player:
 
   # Take damage from enemy in as parameter and subtract from player health
   def takeDamage(self, damage):
-    self.health = self.health - damage
+    # Checks if player has armor and takes damage accordingly
+    if self.armor == True:
+      self.health -= damage * const.ARMOR_MOD
+    else:
+      self.health -= damage
+
     # Check if player health is 0 or below and then die, otherwise nothing
     if self.health < 1:
       self.die()
@@ -68,3 +74,8 @@ class Player:
   def die(self):
     print("die")
     # FINISH THIS
+
+  def dieForReal(self):
+    print("die fr")
+    # FINISH THIS
+  
