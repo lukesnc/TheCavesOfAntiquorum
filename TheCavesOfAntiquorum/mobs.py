@@ -16,32 +16,36 @@ def getRandomWeapon(allowed):
     items.Dagger: items.Dagger()
   }
 
-  # w is for every weapon in the dictionary
-  for w in enemyWeapon:
-    # Checks if the enemy is allowed to use the weapon, then rolls chance to recieve it
-    if (enemyWeapon[w] in allowed[w]) and (random() < enemyWeapon[w].chanceToGet):
-      return enemyWeapon[w]
+  weaponReturned = False
+
+  # i is for every weapon in the dictionary
+  # Checks if the enemy is allowed to use the weapon, then rolls chance to recieve it
+  while weaponReturned == False:
+    for i in enemyWeapon:
+      if (enemyWeapon[i] in allowed[i]) and (random() < enemyWeapon[i].chanceToGet):
+        weaponReturned = True
+        return enemyWeapon[i]
 
 
 # Returns a random minor enemy
 def getRandomEnemy():
   # Dictionary of enemies
   enemies = {
-    Rat.name: Rat(),
-    Spider.name: Spider(),
-    UndeadSoldier.name: UndeadSoldier()
+    Rat: Rat(),
+    Spider: Spider(),
+    UndeadSoldier: UndeadSoldier()
   }
 
-  r = randint(1, 10)
-  if r < 3: # 1/3 to get rat
-    e = Rat.name
-  elif r > 3 and r < 10: # 3/5 to get spider
-    e = Spider.name
-  else: # 1/10 to get undead soldier
-    e = UndeadSoldier.name
+  enemyReturned = False
 
-  return enemies[e]
-  
+  # Rolls chance to encounter wild enemies
+  while enemyReturned == False:
+    for i in enemies:
+      if (random() < enemies[i].chanceToEncounter):
+        enemyReturned = True
+        return enemies[i]
+
+
 # Random enemy encounter, pass in class player
 def encounterEnemy(player):
   # Enemy and player
@@ -74,6 +78,7 @@ class Enemy(object):
   health = None
   tauntMsg = ""
   allowedWeapons = []
+  chanceToEncounter = 1/5
 
   # Combat functions
   def attack(self):
@@ -104,7 +109,7 @@ class Spider(Enemy):
   tauntMsg = "bug noises"
 
   def __init__(self):
-    super.__init__()
+    super().__init__()
     self.health = 10
 
 class UndeadSoldier(Enemy):
@@ -117,7 +122,7 @@ class UndeadSoldier(Enemy):
   ]
 
   def __init__(self):
-    super.__init__()
+    super().__init__()
     self.health = 15
     self.weapon = getRandomWeapon(self.allowedWeapons)
     self.damage = self.weapon.damage
@@ -132,7 +137,17 @@ class Goblin(Enemy):
   ]
 
   def __init__(self):
-    super.__init__()
+    super().__init__()
     self.health = 8
     self.weapon = getRandomWeapon(self.allowedWeapons)
     self.damage = self.weapon.damage
+
+class Spirit(Enemy):
+  name = "spirit"
+  damage = 1
+  tauntMsg = "you don’t have the stone to finish paving your path"
+  chanceToEncounter = 0.02
+
+  def __init__(self):
+    super().__init__()
+    self.health = const.UNKILLABLE
