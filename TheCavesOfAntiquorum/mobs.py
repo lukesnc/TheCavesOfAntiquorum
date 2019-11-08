@@ -1,29 +1,27 @@
 # NPC database
 
 from TheCavesOfAntiquorum import items, const
-from random import randint
+from random import randint, random
 
 from time import sleep
 
 # Returns a random weapon for newly spawned enemy to hold
-def getRandomWeapon(rMin, rMax):
+# Must pass in list of allowed weapons
+def getRandomWeapon(allowed):
   # Dictionary of enemy weapons
   enemyWeapon = {
-    items.Stick.ID: items.Stick(),
-    items.Stone.ID: items.Stone(),
-    items.Club.ID: items.Club()
+    items.Stick: items.Stick(),
+    items.Stone: items.Stone(),
+    items.Club: items.Club(),
+    items.Dagger: items.Dagger()
   }
 
-  r = randint(rMin, rMax)
-  if r < 3: # 1/3 to get stone
-    w = items.Stone.ID
-  elif r > 3 and r < 10: # 3/5 to get stick
-    w = items.Stick.ID
-  else: # 1/10 to get club
-    w = items.Club.ID
+  # w is for every weapon in the dictionary
+  for w in enemyWeapon:
+    # Checks if the enemy is allowed to use the weapon, then rolls chance to recieve it
+    if (enemyWeapon[w] in allowed[w]) and (random() < enemyWeapon[w].chanceToGet):
+      return enemyWeapon[w]
 
-  # w = randint(const.ENEMY_WEAPON_ID_MIN, const.ENEMY_WEAPON_ID_MAX)
-  return enemyWeapon[w]
 
 # Returns a random minor enemy
 def getRandomEnemy():
@@ -70,11 +68,12 @@ def encounterEnemy(player):
 # Main enemy class (ALL ENEMIES SHARE THESE FUNCTIONS AND ATTRIBUTES)
 class Enemy(object):
   # Variables that enemies have
-  name = None
+  name = ""
   damage = None
   weapon = None
   health = None
-  tauntMsg = None
+  tauntMsg = ""
+  allowedWeapons = []
 
   # Combat functions
   def attack(self):
@@ -111,10 +110,29 @@ class Spider(Enemy):
 class UndeadSoldier(Enemy):
   name = "undead soldier"
   tauntMsg = "honor to those who stand before our god"
+  allowedWeapons = [
+    items.Stick.ID,
+    items.Stone.ID,
+    items.Club.ID
+  ]
 
   def __init__(self):
     super.__init__()
     self.health = 15
-    self.weapon = getRandomWeapon(0, 10)
+    self.weapon = getRandomWeapon(self.allowedWeapons)
     self.damage = self.weapon.damage
     
+class Goblin(Enemy):
+  name = "goblin"
+  tauntMsg = "oh, the things that man desires"
+  allowedWeapons = [
+    items.Stick.ID,
+    items.Stone.ID,
+    items.Dagger.ID
+  ]
+
+  def __init__(self):
+    super.__init__()
+    self.health = 8
+    self.weapon = getRandomWeapon(self.allowedWeapons)
+    self.damage = self.weapon.damage
