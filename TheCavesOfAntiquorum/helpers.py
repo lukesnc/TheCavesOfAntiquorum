@@ -2,11 +2,13 @@
 
 # includes
 from TheCavesOfAntiquorum import const
+from TheCavesOfAntiquorum.mobs import encounterEnemy
 
 from time import sleep
 import sys
 from shutil import copyfile
 import pickle
+from random import random
 
 # Displays when user doesn't put in what the game is looking for
 def inputError(text):
@@ -90,3 +92,6 @@ def loadPlayer():
   infile.close()
   return loadedObj
 
+def testEnemyEncounter(player):
+  if random() < const.ENCOUNTER_CHANCE:
+    encounterEnemy(player)
