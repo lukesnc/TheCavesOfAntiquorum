@@ -32,7 +32,7 @@ class Fists:
       self.damage = .5
 
 
-class Dagger:
+class RustyDagger:
   ID = 5
   name = "rusty dagger"
   damage = 4
@@ -54,10 +54,17 @@ class BreakingWheel:
 # ITEM IDs BEGIN WITH 6
 # Enemy items DON'T break
 
+# class EnemyItem:
+#   ID = item ID
+#   name = weapon name
+#   damage = damage weapon deals
+#   chanceToGet = chance enemy will spawn with item
+
 class Stick:
   ID = 61
   name = "stick"
   damage = 4
+  chanceToGet = 3/5
   
   def __init__(self):
     self.durability = randint(1, 3)
@@ -66,6 +73,7 @@ class Stone:
   ID = 62
   name = "stone"
   damage = 2
+  chanceToGet = 1/3
 
   def __init__(self):
     self.durability = randint(1, 4)
@@ -74,6 +82,16 @@ class Club:
   ID = 63
   name = "wooden club"
   damage = 7
+  chanceToGet = 1/10
 
   def __init__(self):
     self.durability = randint(1, 2)
+
+class Dagger:
+  ID = 64
+  name = "dagger"
+  damage = 5
+  chanceToGet = 1/5
+
+  def __init__(self):
+    self.durability = randint(2, 3)
