@@ -33,7 +33,9 @@ def getRandomEnemy():
   enemies = {
     Rat: Rat(),
     Spider: Spider(),
-    UndeadSoldier: UndeadSoldier()
+    UndeadSoldier: UndeadSoldier(),
+    Goblin: Goblin(),
+    Spirit: Spirit()
   }
 
   enemyReturned = False
