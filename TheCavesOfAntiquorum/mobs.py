@@ -9,7 +9,7 @@ from time import sleep
 # Must pass in list of allowed weapons
 def getRandomWeapon(allowed):
   # Dictionary of enemy weapons
-  enemyWeapon = {
+  enemyWeapons = {
     items.Stick: items.Stick(),
     items.Stone: items.Stone(),
     items.Club: items.Club(),
@@ -21,10 +21,10 @@ def getRandomWeapon(allowed):
   # i is for every weapon in the dictionary
   # Checks if the enemy is allowed to use the weapon, then rolls chance to recieve it
   while weaponReturned == False:
-    for i in enemyWeapon:
-      if (enemyWeapon[i] in allowed[i]) and (random() < enemyWeapon[i].chanceToGet):
+    for i in enemyWeapons:
+      if ((i in allowed[i]) and (random() < i.chanceToGet)):
         weaponReturned = True
-        return enemyWeapon[i]
+        return enemyWeapons[i]
 
 
 # Returns a random minor enemy
@@ -43,7 +43,7 @@ def getRandomEnemy():
   # Rolls chance to encounter wild enemies
   while enemyReturned == False:
     for i in enemies:
-      if (random() < enemies[i].chanceToEncounter):
+      if (random() < i.chanceToEncounter):
         enemyReturned = True
         return enemies[i]
 
@@ -118,9 +118,9 @@ class UndeadSoldier(Enemy):
   name = "undead soldier"
   tauntMsg = "honor to those who stand before our god"
   allowedWeapons = [
-    items.Stick.ID,
-    items.Stone.ID,
-    items.Club.ID
+    items.Stick,
+    items.Stone,
+    items.Club
   ]
 
   def __init__(self):
@@ -133,9 +133,9 @@ class Goblin(Enemy):
   name = "goblin"
   tauntMsg = "oh, the things that man desires"
   allowedWeapons = [
-    items.Stick.ID,
-    items.Stone.ID,
-    items.Dagger.ID
+    items.Stick,
+    items.Stone,
+    items.Dagger
   ]
 
   def __init__(self):
