@@ -1,8 +1,9 @@
 # NPC database
 
 from TheCavesOfAntiquorum import items, const
-from random import randint, random
+from TheCavesOfAntiquorum.helpers import clearScreen, printSlow
 
+from random import randint, random
 from time import sleep
 
 # Returns a random weapon for newly spawned enemy to hold
@@ -22,7 +23,7 @@ def getRandomWeapon(allowed):
   # Checks if the enemy is allowed to use the weapon, then rolls chance to recieve it
   while weaponReturned == False:
     for i in enemyWeapons:
-      if ((i in allowed[i]) and (random() < i.chanceToGet)):
+      if ((i in allowed) and (random() < i.chanceToGet)):
         weaponReturned = True
         return enemyWeapons[i]
 
@@ -48,24 +49,44 @@ def getRandomEnemy():
         return enemies[i]
 
 
+# Set back to random encounter chance
+def testEnemyEncounter(player):
+  if random() < 1:
+    encounterEnemy(player)
+
 # Random enemy encounter, pass in class player
 def encounterEnemy(player):
   # Enemy and player
   e = getRandomEnemy()
   p = player
 
+  # Actions player can pick from, enemy will roll chance
   playerActions = ["attack", "cower", "run"]
   enemyActions = ["attack", "taunt"]
 
+  # Keeps track of if combat is over and whose turn it is
+  # Player plays on odd turns, enemy on even
   combatFinished = False
+  turn = 1
+
+  # Dialogue for encounter starts
+  clearScreen()
+  try:
+    printSlow("you have encountered a wild " + e.name + " wielding " + e.weapon.name + "\n")
+  except AttributeError:
+    printSlow("you have encountered a wild " + e.name + "\n")
+  sleep(1)
+  printSlow("what will you do?\n\n")
 
   # While the enemy and player are alive
   while combatFinished == False:
-    # Check if anyone is dead
-    if e.health < 0:
-      combatFinished = True
-    elif p.health < 0:
-      p.die()
+    if turn % 2 == 1: # if turn is odd (player action)
+      print(playerActions[0] + ",", playerActions[1] + " or", playerActions[2] + "?")
+      action = input("> ")
+      
+
+      
+
 
 
 
@@ -80,7 +101,7 @@ class Enemy(object):
   health = None
   tauntMsg = ""
   allowedWeapons = []
-  chanceToEncounter = 1/5
+  chanceToEncounter = 1/10
 
   # Combat functions
   def attack(self):
