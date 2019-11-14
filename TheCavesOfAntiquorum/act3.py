@@ -7,7 +7,8 @@
 
 # includes
 from TheCavesOfAntiquorum import player, items, const
-from TheCavesOfAntiquorum.helpers import clearScreen, inputError, printSlow, printVerySlow, testEnemyEncounter
+from TheCavesOfAntiquorum.helpers import clearScreen, inputError, printSlow, printVerySlow
+from TheCavesOfAntiquorum.mobs import testEnemyEncounter
 
 from time import sleep
 
@@ -53,5 +54,8 @@ def start():
   input()
   clearScreen()
   sleep(3)
-  attemptRock()
+  # attemptRock()
+
+  # For testing:
+  testEnemyEncounter(p1)
   
