@@ -1,7 +1,7 @@
 # NPC database
 
 from TheCavesOfAntiquorum import items, const
-from TheCavesOfAntiquorum.helpers import clearScreen, printSlow
+from TheCavesOfAntiquorum.helpers import clearScreen, printSlow, inputError
 
 from random import randint, random
 from time import sleep
@@ -69,7 +69,15 @@ def encounterEnemy(player):
   combatFinished = False
   turn = 1
 
-  # Dialogue for encounter starts
+  # Determines if player can escape enemy (use run option)
+  escapeChance = 0.1 * (p.MAX_HEALTH / e.health)
+  def canEscape():
+    if random() < escapeChance:
+      return True
+    else:
+      return False
+
+  # Dialogue for encounter start
   clearScreen()
   try:
     printSlow("you have encountered a wild " + e.name + " wielding " + e.weapon.name + "\n")
@@ -81,8 +89,19 @@ def encounterEnemy(player):
   # While the enemy and player are alive
   while combatFinished == False:
     if turn % 2 == 1: # if turn is odd (player action)
-      print(playerActions[0] + ",", playerActions[1] + " or", playerActions[2] + "?")
-      action = input("> ")
+      while True:
+        print(playerActions[0] + ",", playerActions[1] + " or", playerActions[2] + "?")
+        action = input("> ")
+        if action == playerActions[0]:
+          print("attack")
+        elif action == playerActions[1]:
+          print("cower")
+        elif action == playerActions[2]:
+          if canEscape() == True:
+            printSlow("you managed to escape...\n\n")
+            break
+        inputError(action)
+        
       
 
       
