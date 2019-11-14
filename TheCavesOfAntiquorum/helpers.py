@@ -2,7 +2,6 @@
 
 # includes
 from TheCavesOfAntiquorum import const
-from TheCavesOfAntiquorum.mobs import encounterEnemy
 
 from time import sleep
 import sys
@@ -91,7 +90,3 @@ def loadPlayer():
     loadedObj = pickle.load(infile)
   infile.close()
   return loadedObj
-
-def testEnemyEncounter(player):
-  if random() < const.ENCOUNTER_CHANCE:
-    encounterEnemy(player)
