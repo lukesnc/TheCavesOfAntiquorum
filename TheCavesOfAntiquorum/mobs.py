@@ -85,6 +85,7 @@ def encounterEnemy(player):
     printSlow("you have encountered a wild " + e.name + "\n")
   sleep(1)
   printSlow("what will you do?\n\n")
+  sleep(.5)
 
   # While the enemy and player are alive
   while combatFinished == False:
@@ -106,16 +107,30 @@ def encounterEnemy(player):
             combatFinished = True
           else:
             printSlow("you counld't get away\n\n")
-            turn += 1
           break
         inputError(action)
     
     elif turn % 2 == 0: # if turn is even (enemy action)
       # Roll random to determine what enemy will do
-      #if random() < ENEMY_ATTACK_CHANCE
+      if random() < Enemy.ATTACK_CHANCE: 
+        action = enemyActions[0]
+      else:
+        action = enemyActions[1]
 
+      if action == enemyActions[0]: # Enemy attacks
+        print("enemy attack")
+      else:  # Enemy taunts
+        print("the " + e.name + " is staring at you")
+        sleep(1)
+        print("it's mocking you")
+        sleep(1)
+        print("\nthe " + e.name + " says, ", end='')
+        sleep(1)
+        printSlow("\"" + e.tauntMsg + "\"\n\n")
+        sleep(1)
 
-      turn += 1
+    sleep(1)
+    turn += 1
         
   print("combat done")
 
