@@ -1,4 +1,4 @@
-# Contains class player which holds inventroy and other useful values
+# Contains class player which holds inventroy and other useful values/functions
 
 # includes
 from TheCavesOfAntiquorum import const, items
