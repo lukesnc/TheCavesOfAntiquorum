@@ -57,5 +57,5 @@ def start():
   # attemptRock()
 
   # For testing:
-  testEnemyEncounter(p1)
+  testEnemyEncounter(p1, const.ENCOUNTER_RATE)
   
