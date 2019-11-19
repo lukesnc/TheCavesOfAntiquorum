@@ -19,13 +19,12 @@ def getRandomWeapon(allowed):
 
   weaponReturned = False
 
-  # i is for every weapon in the dictionary
   # Checks if the enemy is allowed to use the weapon, then rolls chance to recieve it
   while weaponReturned == False:
-    for i in enemyWeapons:
-      if ((i in allowed) and (random() < i.chanceToGet)):
+    for weapon in enemyWeapons:
+      if ((weapon in allowed) and (random() < weapon.chanceToGet)):
         weaponReturned = True
-        return enemyWeapons[i]
+        return enemyWeapons[weapon]
 
 
 # Returns a random minor enemy
@@ -43,10 +42,10 @@ def getRandomEnemy():
 
   # Rolls chance to encounter wild enemies
   while enemyReturned == False:
-    for i in enemies:
-      if (random() < i.chanceToEncounter):
+    for enemy in enemies:
+      if (random() < enemy.chanceToEncounter):
         enemyReturned = True
-        return enemies[i]
+        return enemies[enemy]
 
 
 # Set back to random encounter chance
