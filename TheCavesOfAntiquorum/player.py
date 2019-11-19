@@ -4,12 +4,14 @@
 from TheCavesOfAntiquorum import const, items
 
 class Player:
+  # Consts
+  MAX_HEALTH = 15
+  ARMOR_MOD = 0.5
 
   def __init__(self):
     # Player variables (not regardless of instance)
     self.name = ""
     self.health = 15
-    self.MAX_HEALTH = 15
 
     # Inventory operates on a list of item IDs
     self.inventory = []
@@ -64,7 +66,7 @@ class Player:
   def takeDamage(self, damage):
     # Checks if player has armor and takes damage accordingly
     if self.armor == True:
-      self.health -= damage * const.ARMOR_MOD
+      self.health -= damage * self.ARMOR_MOD
     else:
       self.health -= damage
 

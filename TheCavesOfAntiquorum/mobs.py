@@ -50,8 +50,8 @@ def getRandomEnemy():
 
 
 # Set back to random encounter chance
-def testEnemyEncounter(player):
-  if random() < 1:
+def testEnemyEncounter(player, rate):
+  if random() < rate:
     encounterEnemy(player)
 
 # Random enemy encounter, pass in class player
@@ -112,7 +112,7 @@ def encounterEnemy(player):
     
     elif turn % 2 == 0: # if turn is even (enemy action)
       # Roll random to determine what enemy will do
-
+      #if random() < ENEMY_ATTACK_CHANCE
 
 
       turn += 1
@@ -128,6 +128,10 @@ def encounterEnemy(player):
 
 # Main enemy class (ALL ENEMIES SHARE THESE FUNCTIONS AND ATTRIBUTES)
 class Enemy(object):
+  # Consts
+  UNKILLABLE = 999 # Health value given to an unkillable enemy
+  ATTACK_CHANCE = 3/4 # Chance enemy's random combat action will be "attack"
+
   # Variables that enemies have
   name = ""
   damage = None
@@ -207,4 +211,4 @@ class Spirit(Enemy):
 
   def __init__(self):
     super().__init__()
-    self.health = const.UNKILLABLE
+    self.health = self.UNKILLABLE
