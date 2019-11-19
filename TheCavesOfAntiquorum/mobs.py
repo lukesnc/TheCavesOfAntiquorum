@@ -1,4 +1,4 @@
-# NPC database
+# File for enemy database and combat system
 
 from TheCavesOfAntiquorum import items, const
 from TheCavesOfAntiquorum.helpers import clearScreen, printSlow, inputError
@@ -81,7 +81,7 @@ def encounterEnemy(player):
   clearScreen()
   try:
     printSlow("you have encountered a wild " + e.name + " wielding " + e.weapon.name + "\n")
-  except AttributeError:
+  except AttributeError: # Enemy isn't capable of weapon (rat, spider, etc...)
     printSlow("you have encountered a wild " + e.name + "\n")
   sleep(1)
   printSlow("what will you do?\n\n")
@@ -90,19 +90,34 @@ def encounterEnemy(player):
   while combatFinished == False:
     if turn % 2 == 1: # if turn is odd (player action)
       while True:
+        # Print the players options and get input
         print(playerActions[0] + ",", playerActions[1] + " or", playerActions[2] + "?")
         action = input("> ")
-        if action == playerActions[0]:
+        # Act based upon input
+        if action.lower() == playerActions[0]:
           print("attack")
-        elif action == playerActions[1]:
+          break
+        elif action.lower() == playerActions[1]:
           print("cower")
-        elif action == playerActions[2]:
+          break
+        elif action.lower() == playerActions[2]:
           if canEscape() == True:
             printSlow("you managed to escape...\n\n")
-            break
+            combatFinished = True
+          else:
+            printSlow("you counld't get away\n\n")
+            turn += 1
+          break
         inputError(action)
+    
+    elif turn % 2 == 0: # if turn is even (enemy action)
+      # Roll random to determine what enemy will do
+
+
+
+      turn += 1
         
-      
+  print("combat done")
 
       
 
