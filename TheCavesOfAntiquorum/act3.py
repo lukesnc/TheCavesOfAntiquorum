@@ -7,13 +7,17 @@
 
 # includes
 from TheCavesOfAntiquorum import player, items, const
-from TheCavesOfAntiquorum.helpers import clearScreen, inputError, printSlow, printVerySlow
+from TheCavesOfAntiquorum.helpers import clearScreen, inputError, printSlow, printVerySlow, loadPlayer
 from TheCavesOfAntiquorum.mobs import testEnemyEncounter
 
 from time import sleep
 
 # Globals
-p1 = player.Player()
+try:
+  p1 = loadPlayer()
+  p1.reset()
+except FileNotFoundError:
+  p1 = player.Player()
 
 # Story of act 3 starts here
 def attemptRock():
