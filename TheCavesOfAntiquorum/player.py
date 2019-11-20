@@ -2,6 +2,9 @@
 
 # includes
 from TheCavesOfAntiquorum import const, items
+from TheCavesOfAntiquorum.helpers import printSlow, clearScreen, shutDown, savePlayer
+
+from time import sleep
 
 class Player:
   # Consts
@@ -12,6 +15,7 @@ class Player:
     # Player variables (not regardless of instance)
     self.name = ""
     self.health = 15
+    self.deaths = 0
 
     # Inventory operates on a list of item IDs
     self.inventory = []
@@ -47,6 +51,10 @@ class Player:
       self.inventory.append(items.Dynamite.ID)
     save.close()
 
+  # Resets certain player values upon reload
+  def reset(self):
+    self.health = self.MAX_HEALTH
+
 
   # COMBAT
 
@@ -74,16 +82,42 @@ class Player:
     if self.health < 1:
       self.die()
 
-  # Player eats enemies to regain health
-  def eat(self):
-    print("temp")
-    # FINISH THIS
 
   def die(self):
-    print("die")
-    # FINISH THIS
+    # Incriments death variable
+    self.deaths += 1
 
-  def dieForReal(self):
-    print("die fr")
-    # FINISH THIS
-  
+    clearScreen()
+    print("your knees give out, and you fall to the floor")
+    sleep(2)
+    print("your vision fades, defeat setting in")
+    sleep(2)
+    print("blood is pouring from your wounds, there's no stopping this")
+    sleep(2)
+    print("you tip forward, your face smashing against the ground")
+    sleep(2)
+    printSlow("\nyou bleed out, and your heart stops\n")
+    sleep(1)
+    printSlow(".....")
+    sleep(5)
+    clearScreen()
+
+    # Updates death count in save file
+    save = open(const.SAVE_PATH, 'r')
+    data = save.read()
+    save.close()
+    update = data.replace("DEATHS=" + str(self.deaths - 1), "DEATHS=" + str(self.deaths))
+    save = open(const.SAVE_PATH, 'w')
+    save.write(update)
+    save.close()
+
+    sleep(2)
+    printSlow("\nSave file updated.\n")
+    sleep(3)
+    clearScreen()
+    sleep(2)
+    
+    # Restart game at saved act
+    savePlayer(self)
+    shutDown()
+    
