@@ -89,6 +89,11 @@ def encounterEnemy(player):
   # While the enemy and player are alive
   while combatFinished == False:
     if turn % 2 == 1: # if turn is odd (player action)
+      # Update displayed values
+      print("\n-=HEALTH=-")
+      print("player: " + str(p.health))
+      print(e.name + ": " + str(e.health) + "\n")
+
       while True:
         # Print the players options and get input
         print(playerActions[0] + ",", playerActions[1] + " or", playerActions[2] + "?")
@@ -109,6 +114,7 @@ def encounterEnemy(player):
           break
         inputError(action)
     
+    
     elif turn % 2 == 0: # if turn is even (enemy action)
       # Roll random to determine what enemy will do
       if random() < Enemy.ATTACK_CHANCE: 
@@ -127,6 +133,7 @@ def encounterEnemy(player):
         sleep(1)
         printSlow("\"" + e.tauntMsg + "\"\n\n")
         sleep(1)
+
 
     sleep(1)
     turn += 1
