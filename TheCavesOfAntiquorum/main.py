@@ -207,6 +207,7 @@ def createSave():
   save.write("SAVE FILE FOR THE CAVES OF ANTIQUORUM\n")
   save.write("CREATED " + str(datetime.datetime.now()) + "\n\n")
   save.write("ACT=1\n")
+  save.write("DEATHS=0\n")
   save.write("\n=======ITEMS=======\n\n")
   save.close()
 
