@@ -21,6 +21,7 @@ class Dynamite:
 class Fists:
   ID = 4
   name = "fists"
+  swingMsg = "you swing your fists"
 
   def __init__(self):
     self.damage = 1
@@ -36,6 +37,7 @@ class RustyDagger:
   ID = 5
   name = "rusty dagger"
   damage = 4
+  swingMsg = "you evsicerate the enemy with your rusty dagger"
 
   def __init__(self):
     self.durability = 3
@@ -45,6 +47,7 @@ class BreakingWheel:
   ID = 3
   name = "the breaking wheel"
   damage = 4
+  swingMsg = "you crush their ribs with the breaking wheel"
 
   def __init__(self):
     self.durability = 3
