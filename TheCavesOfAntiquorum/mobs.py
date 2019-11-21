@@ -76,6 +76,13 @@ def encounterEnemy(player):
     else:
       return False
 
+  # Determine if anyone is dead
+  def checkHealths(pH, eH):
+    if pH < 1 or eH < 1:
+      return True
+    else:
+      return False
+
   # Dialogue for encounter start
   clearScreen()
   try:
@@ -87,7 +94,7 @@ def encounterEnemy(player):
   sleep(.5)
 
   # While the enemy and player are alive
-  while combatFinished == False:
+  while not combatFinished:
     if turn % 2 == 1: # if turn is odd (player action)
       # Update displayed values
       print("\n-=HEALTH=-")
@@ -100,7 +107,10 @@ def encounterEnemy(player):
         action = input("> ")
         # Act based upon input
         if action.lower() == playerActions[0]:
-          print("attack")
+          # Takes away enemy health based on players damage
+          e.takeDamage(5)
+          # Check if someone is dead
+          combatFinished = checkHealths(p.health, e.health)
           break
         elif action.lower() == playerActions[1]:
           print("cower")
@@ -114,8 +124,7 @@ def encounterEnemy(player):
           break
         inputError(action)
     
-    
-    elif turn % 2 == 0: # if turn is even (enemy action)
+    if turn % 2 == 0: # if turn is even (enemy action)
       # Roll random to determine what enemy will do
       if random() < Enemy.ATTACK_CHANCE: 
         action = enemyActions[0]
@@ -124,6 +133,7 @@ def encounterEnemy(player):
 
       if action == enemyActions[0]: # Enemy attacks
         print("enemy attack")
+        combatFinished = checkHealths(p.health, e.health)
       else:  # Enemy taunts
         print("the " + e.name + " is staring at you")
         sleep(1)
@@ -133,7 +143,6 @@ def encounterEnemy(player):
         sleep(1)
         printSlow("\"" + e.tauntMsg + "\"\n\n")
         sleep(1)
-
 
     sleep(1)
     turn += 1
@@ -164,10 +173,10 @@ class Enemy(object):
 
   # Combat functions
   def attack(self):
-    return self.weapon.damage
+    return self.damage
 
-  def takeDamage(self, damage):
-    self.health = self.health - damage
+  def takeDamage(self, dmg):
+    self.health = self.health - dmg
 
   def taunt(self):
     print(self.tauntMsg)
@@ -228,7 +237,7 @@ class Spirit(Enemy):
   name = "spirit"
   damage = 1
   tauntMsg = "you don’t have the stone to finish paving your path"
-  chanceToEncounter = 0.02
+  chanceToEncounter = 0.01
 
   def __init__(self):
     super().__init__()

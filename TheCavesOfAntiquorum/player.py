@@ -64,6 +64,7 @@ class Player:
     try:
       if weapon.durability > 0:
         weapon.durability -= 1
+        print("you swing your " + self.weapon.name)
         return self.weapon.damage
       else:
         print("your " + self.weapon.name + " broke")
