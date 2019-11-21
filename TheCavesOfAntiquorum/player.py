@@ -62,14 +62,18 @@ class Player:
   # vaue to be used on the enemy's takeDamage() function
   def attack(self):
     try:
-      if weapon.durability > 0:
-        weapon.durability -= 1
-        print("you swing your " + self.weapon.name)
+      if self.weapon.durability > 0:
+        self.weapon.durability -= 1
+        print(self.weapon.swingMsg)
+        sleep(1)
+        printSlow("you deal " + str(self.weapon.damage) + " damage\n\n")
         return self.weapon.damage
       else:
         print("your " + self.weapon.name + " broke")
+        return 0
     except:
       print("you have no weapon")
+      return 0
 
   # Take damage from enemy in as parameter and subtract from player health
   def takeDamage(self, damage):

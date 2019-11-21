@@ -108,7 +108,8 @@ def encounterEnemy(player):
         # Act based upon input
         if action.lower() == playerActions[0]:
           # Takes away enemy health based on players damage
-          e.takeDamage(5)
+          sleep(1)
+          e.takeDamage(p.attack())
           # Check if someone is dead
           combatFinished = checkHealths(p.health, e.health)
           break
