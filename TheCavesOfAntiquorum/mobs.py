@@ -132,8 +132,11 @@ def encounterEnemy(player):
       else:
         action = enemyActions[1]
 
+      sleep(1)
       if action == enemyActions[0]: # Enemy attacks
-        print("enemy attack")
+        # Take away player's health based on enemy damage
+        p.takeDamage(e.attack())
+        # Check if someone is dead
         combatFinished = checkHealths(p.health, e.health)
       else:  # Enemy taunts
         print("the " + e.name + " is staring at you")
@@ -174,10 +177,16 @@ class Enemy(object):
 
   # Combat functions
   def attack(self):
+    try:
+      print("the " + self.name + " swings their " + self.weapon.name)
+    except AttributeError:
+      print("the " + self.name + " attacks")
+    sleep(1)
+    printSlow("the " + self.name + " deals " + str(self.damage) + " damage\n\n")
     return self.damage
 
-  def takeDamage(self, dmg):
-    self.health = self.health - dmg
+  def takeDamage(self, damage):
+    self.health = self.health - damage
 
   def taunt(self):
     print(self.tauntMsg)
