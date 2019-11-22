@@ -121,7 +121,7 @@ def encounterEnemy(player):
             printSlow("you managed to escape...\n\n")
             combatFinished = True
           else:
-            printSlow("you counld't get away\n\n")
+            printSlow("you couldn't get away\n\n")
           break
         inputError(action)
     
