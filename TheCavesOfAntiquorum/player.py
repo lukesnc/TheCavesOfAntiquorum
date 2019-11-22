@@ -92,7 +92,9 @@ class Player:
     # Incriments death variable
     self.deaths += 1
 
+    sleep(3)
     clearScreen()
+    sleep(2)
     print("your knees give out, and you fall to the floor")
     sleep(2)
     print("your vision fades, defeat setting in")

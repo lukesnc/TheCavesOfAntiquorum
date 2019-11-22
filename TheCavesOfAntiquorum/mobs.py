@@ -70,7 +70,7 @@ def encounterEnemy(player):
 
   # Determines if player can escape enemy (use run option)
   def canEscape():
-    escapeChance = 0.1 * (p.MAX_HEALTH / e.health)
+    escapeChance = 0.13 * (p.MAX_HEALTH / e.health)
     if random() < escapeChance:
       return True
     else:
