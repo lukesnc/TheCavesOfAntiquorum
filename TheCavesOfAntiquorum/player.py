@@ -5,11 +5,14 @@ from TheCavesOfAntiquorum import const, items
 from TheCavesOfAntiquorum.helpers import printSlow, clearScreen, shutDown, savePlayer
 
 from time import sleep
+from random import random
 
 class Player:
   # Consts
   MAX_HEALTH = 15
-  ARMOR_MOD = 0.5
+  ARMOR_MOD = 0.5 # Damage multiplier when wearing armor
+  CRIT_CHANCE = 0.0625 # Chance player attack is critical
+  CRIT_MOD = 2 # Damage multiplier when attack is critical
 
   def __init__(self):
     # Player variables (not regardless of instance)
@@ -66,12 +69,22 @@ class Player:
         self.weapon.durability -= 1
         print(self.weapon.swingMsg)
         sleep(1)
-        printSlow("you deal " + str(self.weapon.damage) + " damage\n\n")
-        return self.weapon.damage
+        # Determine if crit
+        if random() < self.CRIT_CHANCE:
+          sleep(1)
+          print("a critical hit!")
+          sleep(1)
+          critDamage = self.weapon.damage * self.CRIT_MOD
+          printSlow("you deal " + str(critDamage) + " damage\n\n")
+          return critDamage
+        else:
+          printSlow("you deal " + str(self.weapon.damage) + " damage\n\n")
+          return self.weapon.damage
       else:
-        print("your " + self.weapon.name + " broke")
+        print("your " + self.weapon.name + " broke\n")
+        self.weapon = None
         return 0
-    except:
+    except AttributeError:
       print("you have no weapon")
       return 0
 
