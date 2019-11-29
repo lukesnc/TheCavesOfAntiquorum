@@ -154,10 +154,6 @@ def encounterEnemy(player):
   print("combat done")
 
       
-
-
-
-
 # ENEMIES 
 
 # Main enemy class (ALL ENEMIES SHARE THESE FUNCTIONS AND ATTRIBUTES)
