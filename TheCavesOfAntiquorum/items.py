@@ -36,11 +36,11 @@ class Fists:
 class RustyDagger:
   ID = 5
   name = "rusty dagger"
-  damage = 4
+  damage = 3
   swingMsg = "you evsicerate the enemy with your rusty dagger"
 
   def __init__(self):
-    self.durability = 3
+    self.durability = 5
 
 
 class BreakingWheel:
