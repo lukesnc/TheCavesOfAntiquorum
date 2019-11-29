@@ -54,10 +54,6 @@ class Player:
       self.inventory.append(items.Dynamite.ID)
     save.close()
 
-  # Resets certain player values upon reload
-  def reset(self):
-    self.health = self.MAX_HEALTH
-
 
   # COMBAT
 
@@ -136,6 +132,9 @@ class Player:
     sleep(3)
     clearScreen()
     sleep(2)
+
+    # Refreshes player values
+    self.health = self.MAX_HEALTH
     
     # Restart game at saved act
     savePlayer(self)

@@ -15,7 +15,6 @@ from time import sleep
 # Globals
 try:
   p1 = loadPlayer()
-  p1.reset()
 except FileNotFoundError:
   p1 = player.Player()
 
