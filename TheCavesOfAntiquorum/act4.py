@@ -4,7 +4,8 @@
 # 
 
 # includes
-from TheCavesOfAntiquorum import player, items, const
+from TheCavesOfAntiquorum import items, const
+from TheCavesOfAntiquorum.player import Player
 from TheCavesOfAntiquorum.helpers import clearScreen, inputError, printSlow, printVerySlow
 
 from time import sleep

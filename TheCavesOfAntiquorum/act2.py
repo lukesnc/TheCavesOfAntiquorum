@@ -5,13 +5,14 @@
 # inventory (player can't access but it's there)
 
 # includes
-from TheCavesOfAntiquorum import player, items, const
+from TheCavesOfAntiquorum import items, const
+from TheCavesOfAntiquorum.player import Player
 from TheCavesOfAntiquorum.helpers import clearScreen, inputError, printSlow, printVerySlow, startAct
 
 from time import sleep
 
 # Creates an object of player
-p1 = player.Player()
+p1 = Player()
 dynamite = 0
 
 def writeDynamiteToSave():

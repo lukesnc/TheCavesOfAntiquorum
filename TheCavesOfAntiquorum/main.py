@@ -4,11 +4,11 @@
 # Main file / act 1
 
 # includes
-from time import sleep
-import datetime
-
 from TheCavesOfAntiquorum.helpers import clearScreen, inputError, startAct
 from TheCavesOfAntiquorum import const, items
+
+from time import sleep
+import datetime
 
 # Act 1 globals
 uselessKey = 0 # First key found on the ground
