@@ -221,7 +221,7 @@ def boot():
   saveMade = False # variable prevents double creation
   try: 
     save = open(const.SAVE_PATH, 'r')
-  except OSError:
+  except:
     createSave()
     saveMade = True
 

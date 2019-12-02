@@ -80,7 +80,7 @@ class Player:
         print("your " + self.weapon.name + " broke\n")
         self.weapon = None
         return 0
-    except AttributeError:
+    except:
       print("you have no weapon")
       return 0
 

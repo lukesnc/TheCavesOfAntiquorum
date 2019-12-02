@@ -87,7 +87,7 @@ def encounterEnemy(player):
   clearScreen()
   try:
     printSlow("you have encountered a wild " + e.name + " wielding " + e.weapon.name + "\n")
-  except AttributeError: # Enemy isn't capable of weapon (rat, spider, etc...)
+  except: # Enemy isn't capable of weapon (rat, spider, etc...)
     printSlow("you have encountered a wild " + e.name + "\n")
   sleep(1)
   printSlow("what will you do?\n\n")
@@ -175,7 +175,7 @@ class Enemy(object):
   def attack(self):
     try:
       print("the " + self.name + " swings their " + self.weapon.name)
-    except AttributeError:
+    except:
       print("the " + self.name + " attacks")
     sleep(1)
     printSlow("the " + self.name + " deals " + str(self.damage) + " damage\n\n")

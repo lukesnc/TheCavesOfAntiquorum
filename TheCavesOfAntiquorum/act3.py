@@ -16,7 +16,7 @@ from time import sleep
 # Globals
 try:
   p1 = loadPlayer()
-except FileNotFoundError:
+except:
   p1 = Player()
 
 # Story of act 3 starts here
