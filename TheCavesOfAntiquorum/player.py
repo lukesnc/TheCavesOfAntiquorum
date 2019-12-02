@@ -11,7 +11,7 @@ class Player:
   # Consts
   MAX_HEALTH = 15
   ARMOR_MOD = 0.5 # Damage multiplier when wearing armor
-  CRIT_CHANCE = 0.0625 # Chance player attack is critical
+  DEFAULT_CRIT_CHANCE = 0.0625 # Chance player attack is critical
   CRIT_MOD = 2 # Damage multiplier when attack is critical
 
   def __init__(self):
@@ -24,9 +24,10 @@ class Player:
     self.inventory = []
     self.getInventory()
 
-    # Equipment
+    # Equipment / combat
     self.weapon = items.Fists()
     self.armor = False 
+    self.critChance = self.DEFAULT_CRIT_CHANCE # Chance player attack is critical
 
 
   def getName(self):
@@ -66,7 +67,7 @@ class Player:
         print(self.weapon.swingMsg)
         sleep(1)
         # Determine if crit
-        if random() < self.CRIT_CHANCE:
+        if random() < self.critChance:
           sleep(1)
           print("a critical hit!")
           sleep(1)

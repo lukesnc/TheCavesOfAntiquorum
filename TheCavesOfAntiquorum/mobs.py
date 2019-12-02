@@ -114,7 +114,23 @@ def encounterEnemy(player):
           combatFinished = checkHealths(p.health, e.health)
           break
         elif action.lower() == playerActions[1]:
-          print("cower")
+          sleep(2)
+          print("you curl up in fear")
+          sleep(1)
+          print("the enemies gaze burning a hole through you\n")
+          sleep(3)
+          printSlow("you freeze\n")
+          sleep(3)
+          print("fear has taken hold of you\n")
+          sleep(5)
+          print("you snap out of it")
+          sleep(2)
+          print("but you feel something has changed")
+          sleep(2)
+          print("quite possibly in your favor\n")
+          sleep(3)
+          # Player's chance of critical hit increases
+          p.critChance += 0.01
           break
         elif action.lower() == playerActions[2]:
           if canEscape() == True:
@@ -151,6 +167,7 @@ def encounterEnemy(player):
     sleep(1)
     turn += 1
         
+  p.critChance = p.DEFAULT_CRIT_CHANCE
   print("combat done")
 
       
@@ -183,10 +200,6 @@ class Enemy(object):
 
   def takeDamage(self, damage):
     self.health = self.health - damage
-
-  def taunt(self):
-    print(self.tauntMsg)
-    sleep(1)
 
 
 # Sub-classes
