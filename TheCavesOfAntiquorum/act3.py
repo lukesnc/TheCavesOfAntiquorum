@@ -19,6 +19,11 @@ try:
 except:
   p1 = Player()
 
+
+# Room after rubble is blown, containing lore of game and shitty dagger
+def loreRoom():
+  pass
+
 # Story of act 3 starts here
 def attemptRock():
   print("it's darker than before, but the rubble is still there")
@@ -35,8 +40,26 @@ def attemptRock():
     if option == "yes":
       print("you look around on the ground, pushing over rocks and feeling around on the walls")
       sleep(1)
-      print("you find a piece of flint")
-      # FINISH THIS
+      print("you find a piece of flint\n")
+      sleep(1)
+      print("you grab another rock and spark the flint over the fuse", end='')
+      sleep(1)
+      printVerySlow(".......")
+      printSlow("\nboom!")
+      sleep(2)
+      print("the rock was blown away, leaving a path forward")
+      sleep(1)
+      while True:
+        print("\nkeep going or go back")
+        option2 = input("> ")
+        
+        if option2 == "keep going":
+          loreRoom()
+          break
+        elif option2 == "go back" or option2 == "back":
+          attemptRock()
+          break
+        inputError(option2)
       break
     elif option == "no":
       print("you decide against looking for something to light the dynamite with")
@@ -58,8 +81,4 @@ def start():
   input()
   clearScreen()
   sleep(3)
-  # attemptRock()
-
-  # For testing:
-  testEnemyEncounter(p1, const.ENCOUNTER_RATE)
-  
+  attemptRock()
