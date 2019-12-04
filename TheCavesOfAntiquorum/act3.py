@@ -14,6 +14,7 @@ from TheCavesOfAntiquorum.mobs import testEnemyEncounter
 from time import sleep
 
 # Globals
+rubbleBlownUp = False
 try:
   p1 = loadPlayer()
 except:
@@ -26,18 +27,23 @@ def loreRoom():
 
 # Story of act 3 starts here
 def attemptRock():
-  print("it's darker than before, but the rubble is still there")
-  sleep(1)
-  print("and an explosive in your hands")
-  sleep(2)
-  print("\nyou need something to light the dynamite with")
-  sleep(2)
+  global rubbleBlownUp
+  if not rubbleBlownUp:
+    print("it's darker than before, but the rubble is still there")
+    sleep(1)
+    print("and an explosive in your hands")
+    sleep(2)
+    print("\nyou need something to light the dynamite with")
+    sleep(2)
+  else:
+    print("it's darker than before, and your ears are ringing a bit")
+    sleep(1)
 
   while True:
     print("\nlook around?\n\nyes or no")
     option = input("> ")
 
-    if option == "yes":
+    if option == "yes" and not rubbleBlownUp:
       print("you look around on the ground, pushing over rocks and feeling around on the walls")
       sleep(1)
       print("you find a piece of flint\n")
@@ -46,8 +52,10 @@ def attemptRock():
       sleep(1)
       printVerySlow(".......")
       printSlow("\nboom!")
+      rubbleBlownUp = True
+      p1.inventory.remove(items.Dynamite.ID)
       sleep(2)
-      print("the rock was blown away, leaving a path forward")
+      print("\nthe rock was blown away, leaving a path forward")
       sleep(1)
       while True:
         print("\nkeep going or go back")
@@ -61,6 +69,12 @@ def attemptRock():
           break
         inputError(option2)
       break
+    elif option == "yes" and rubbleBlownUp:
+      print("the rubble is already blown up, idiot")
+      sleep(2)
+      print("\nyou step forward into the room")
+      sleep(1)
+      loreRoom()
     elif option == "no":
       print("you decide against looking for something to light the dynamite with")
       sleep(2)
