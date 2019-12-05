@@ -25,7 +25,7 @@ class Fists:
 
   def __init__(self):
     self.damage = 1
-    self.durability = 10
+    self.durability = -1 # unbreakable
     self.winded = False
 
   def swing(self):

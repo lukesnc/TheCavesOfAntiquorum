@@ -69,7 +69,7 @@ class Player:
   # vaue to be used on the enemy's takeDamage() function
   def attack(self):
     try:
-      if self.weapon.durability > 0:
+      if self.weapon.durability is not 0:
         self.weapon.durability -= 1
         print(self.weapon.swingMsg)
         sleep(1)

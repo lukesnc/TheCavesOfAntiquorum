@@ -15,6 +15,7 @@ from time import sleep
 
 # Globals
 rubbleBlownUp = False
+
 try:
   p1 = loadPlayer()
 except:

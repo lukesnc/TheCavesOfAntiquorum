@@ -100,7 +100,7 @@ class CombatSystem():
             sleep(2)
             print("you curl up in fear")
             sleep(1)
-            print("the enemies gaze burning a hole through you\n")
+            print("the enemy's gaze burning a hole through you\n")
             sleep(3)
             printSlow("you freeze\n")
             sleep(3)
