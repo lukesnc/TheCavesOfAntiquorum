@@ -9,7 +9,7 @@
 from TheCavesOfAntiquorum import items, const
 from TheCavesOfAntiquorum.player import Player
 from TheCavesOfAntiquorum.helpers import clearScreen, inputError, printSlow, printVerySlow, loadPlayer
-from TheCavesOfAntiquorum.mobs import testEnemyEncounter
+from TheCavesOfAntiquorum.combat import CombatSystem
 
 from time import sleep
 
@@ -19,6 +19,7 @@ try:
   p1 = loadPlayer()
 except:
   p1 = Player()
+fight = CombatSystem()
 
 
 # Room after rubble is blown, containing lore of game and shitty dagger
@@ -95,4 +96,7 @@ def start():
   input()
   clearScreen()
   sleep(3)
-  attemptRock()
+  # attemptRock()
+
+  # testing
+  fight.testEnemyEncounter(p1, const.ENCOUNTER_RATE)
