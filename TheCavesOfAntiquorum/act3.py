@@ -7,8 +7,8 @@
 
 # includes
 from TheCavesOfAntiquorum import items, const
-from TheCavesOfAntiquorum.player import Player
 from TheCavesOfAntiquorum.helpers import clearScreen, inputError, printSlow, printVerySlow, loadPlayer
+from TheCavesOfAntiquorum.player import Player
 from TheCavesOfAntiquorum.combat import CombatSystem
 
 from time import sleep
@@ -19,7 +19,7 @@ try:
   p1 = loadPlayer()
 except:
   p1 = Player()
-fight = CombatSystem()
+c = CombatSystem()
 
 
 # Room after rubble is blown, containing lore of game and shitty dagger
@@ -77,7 +77,7 @@ def attemptRock():
       sleep(1)
       loreRoom()
     elif option == "no":
-      print("you decide against looking for something to light the dynamite with")
+      print("you decide against looking around the room")
       sleep(2)
       printSlow("\nwhy not give youself a name?\n")
       sleep(1)
@@ -96,7 +96,7 @@ def start():
   input()
   clearScreen()
   sleep(3)
-  # attemptRock()
+  attemptRock()
 
   # testing
-  fight.testEnemyEncounter(p1, const.ENCOUNTER_RATE)
+  # c.testEnemyEncounter(p1, const.ENCOUNTER_RATE)

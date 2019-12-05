@@ -32,7 +32,14 @@ class Player:
 
   def getName(self):
     # User has no choice here
-    input("Enter your name: ")
+    n = input("enter your name: ")
+    sleep(1)
+    print("hmmm, ", end='')
+    sleep(2)
+    printSlow(n + "...\n\n")
+    sleep(5)
+    print("an interesting name\n")
+    sleep(5)
     print("your name is now joe")
     self.name = "joe"
 
