@@ -25,7 +25,23 @@ c = CombatSystem()
 
 # Room after rubble is blown, containing lore of game and shitty dagger
 def loreRoom():
-  pass
+  print("you emerge into a very odd room\n")
+  sleep(2)
+  print("the room is small, with many paths leading to other rooms")
+  sleep(1)
+  print("there are slimy, tentacle-like apendages rising from the ground")
+  sleep(1)
+  print("straight ahead is a word engraved on the wall: ", end='')
+  sleep(1)
+  printSlow("Arenam")
+  sleep(3)
+  print("\nin the middle of the room sits a podium")
+  sleep(1)
+
+  while True:
+    print("\ninvestiage podium or go back")
+    option = input("> ")
+    
 
 # Story of act 3 starts here
 def attemptRock():
@@ -80,7 +96,7 @@ def attemptRock():
     elif option == "no":
       print("you decide against looking around the room")
       sleep(2)
-      printSlow("\nwhy not give youself a name?\n")
+      print("\nwhy not give youself a name?")
       sleep(1)
       p1.getName()
       sleep(2)
@@ -97,7 +113,7 @@ def start():
   input()
   clearScreen()
   sleep(3)
-  attemptRock()
+  # attemptRock()
 
   # testing
-  # c.testEnemyEncounter(p1, const.ENCOUNTER_RATE)
+  c.testEnemyEncounter(p1, 1)
