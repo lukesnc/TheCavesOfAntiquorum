@@ -26,21 +26,55 @@ c = CombatSystem()
 # Room after rubble is blown, containing lore of game and shitty dagger
 def loreRoom():
   print("you emerge into a very odd room\n")
-  sleep(2)
+  sleep(1)
   print("the room is small, with many paths leading to other rooms")
-  sleep(1)
+  sleep(2)
   print("there are slimy, tentacle-like apendages rising from the ground")
-  sleep(1)
+  sleep(2)
   print("straight ahead is a word engraved on the wall: ", end='')
-  sleep(1)
+  sleep(2)
   printSlow("Arenam")
   sleep(3)
-  print("\nin the middle of the room sits a podium")
+  print("\nin the middle of the room sits a podium\n")
   sleep(1)
-
   while True:
     print("\ninvestiage podium or go back")
     option = input("> ")
+
+    if option == "investigate":
+      print("you step up to the podium")
+      sleep(1)
+      print("on it lies a rusty dagger")
+      sleep(1)
+      while True:
+        print("\ntake the dagger?\n\nyes or no")
+        option2 = input("> ")
+
+        if option2 == "yes":
+          sleep(1)
+          print("you pick up the dagger")
+          sleep(1)
+          print("you spin it around, admiring its rust", end='')
+          sleep(1)
+          print(", its fragility", end='')
+          sleep(1)
+          print(", and its shittiness")
+          sleep(2)
+          printSlow("equipped: " + items.RustyDagger.name + "\n")
+          p1.weapon = items.RustyDagger()
+          sleep(1)
+
+          break
+        elif option2 == "no":
+          break
+        inputError(option2)
+      print("you continue on through the room")
+      sleep(1)
+      break
+    elif option == "go back" or option == "back":
+      attemptRock()
+      break
+    inputError(option)
     
 
 # Story of act 3 starts here
@@ -113,7 +147,7 @@ def start():
   input()
   clearScreen()
   sleep(3)
-  # attemptRock()
+  attemptRock()
 
-  # testing
-  c.testEnemyEncounter(p1, 1)
+  # combat testing
+  # c.testEnemyEncounter(p1, 1)
