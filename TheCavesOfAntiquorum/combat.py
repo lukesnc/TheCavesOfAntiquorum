@@ -2,7 +2,7 @@
 
 # includes
 from TheCavesOfAntiquorum.helpers import clearScreen, printSlow, inputError
-from TheCavesOfAntiquorum import mobs as m
+from TheCavesOfAntiquorum import mobs
 
 from time import sleep
 from random import random
@@ -20,11 +20,11 @@ class CombatSystem():
   def getRandomEnemy(self):
     # Dictionary of enemies
     enemies = {
-      m.Rat: m.Rat(),
-      m.Spider: m.Spider(),
-      m.UndeadSoldier: m.UndeadSoldier(),
-      m.Goblin: m.Goblin(),
-      m.Spirit: m.Spirit()
+      mobs.Rat: mobs.Rat(),
+      mobs.Spider: mobs.Spider(),
+      mobs.UndeadSoldier: mobs.UndeadSoldier(),
+      mobs.Goblin: mobs.Goblin(),
+      mobs.Spirit: mobs.Spirit()
     }
 
     enemyReturned = False
