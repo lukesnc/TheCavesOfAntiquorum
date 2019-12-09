@@ -1,10 +1,11 @@
 # File for enemy database and combat system
 
+# includes
 from TheCavesOfAntiquorum import items
 from TheCavesOfAntiquorum.helpers import printSlow
 
-from random import random
 from time import sleep
+from random import random
 
 # ENEMIES 
 
