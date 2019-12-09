@@ -46,11 +46,6 @@ class CombatSystem():
     playerActions = ["attack", "cower", "run"]
     enemyActions = ["attack", "taunt"]
 
-    # Keeps track of if combat is over and whose turn it is
-    # Player plays on odd turns, enemy on even
-    combatFinished = False
-    turn = 1
-
     # Determines if player can escape enemy (use run option)
     def canEscape():
       escapeChance = 0.13 * (p.MAX_HEALTH / e.health)
@@ -76,6 +71,12 @@ class CombatSystem():
     printSlow("what will you do?\n\n")
     sleep(.5)
 
+
+    # Player plays on odd turns, enemy on even
+    combatFinished = False
+    turn = 1
+
+    # COMBAT
     # While the enemy and player are alive
     while not combatFinished:
       if turn % 2 == 1: # if turn is odd (player action)
@@ -150,5 +151,19 @@ class CombatSystem():
       sleep(1)
       turn += 1
           
+    # COMBAT DONE - Player won
     p.critChance = p.DEFAULT_CRIT_CHANCE
-    print("combat done")
+
+    printSlow("you defeated the enemy " + e.name + "\n")
+    sleep(1)
+    
+    if turn <= 10:
+      print("a swift victory")
+    elif turn < 10 and turn < 15:
+      print("took you a bit to take 'em down")
+    else:
+      print("try and hurry it up next time")
+
+    sleep(3)
+    clearScreen()
+    sleep(1)
