@@ -78,7 +78,10 @@ def loreRoom():
       print("you continue on through the room")
       sleep(1)
       print("your " + p1.weapon.name + " at the ready")
+      sleep(2)
+      print("\nin your excitement you failed to notice a book at your feet")
       sleep(1)
+      # continue here
 
       break
     elif option == "go back" or option == "back":
