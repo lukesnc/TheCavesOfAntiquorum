@@ -32,13 +32,13 @@ def loreRoom():
   print("there are slimy, tentacle-like apendages rising from the ground")
   sleep(2)
   print("straight ahead is a word engraved on the wall: ", end='')
-  sleep(2)
-  printSlow("Arenam")
+  sleep(1.5)
+  printVerySlow("Arenam")
   sleep(3)
   print("\nin the middle of the room sits a podium\n")
   sleep(1)
   while True:
-    print("\ninvestiage podium or go back")
+    print("investiage podium or go back")
     option = input("> ")
 
     if option == "investigate":
@@ -55,21 +55,31 @@ def loreRoom():
           print("you pick up the dagger")
           sleep(1)
           print("you spin it around, admiring its rust", end='')
-          sleep(1)
+          sleep(2)
           print(", its fragility", end='')
-          sleep(1)
+          sleep(1.5)
           print(", and its shittiness")
           sleep(2)
-          printSlow("equipped: " + items.RustyDagger.name + "\n")
+          printSlow("equipped: " + items.RustyDagger.name + "\n\n")
           p1.weapon = items.RustyDagger()
           sleep(1)
-
           break
         elif option2 == "no":
+          sleep(1)
+          print("upon further consideration...")
+          sleep(3)
+          print("weapons are overrated")
+          sleep(2)
+          print("punching everything to death is way more fun anyway\n")
+          sleep(2)
           break
         inputError(option2)
+      # Continuing whether player has dagger or not
       print("you continue on through the room")
       sleep(1)
+      print("your " + p1.weapon.name + " at the ready")
+      sleep(1)
+
       break
     elif option == "go back" or option == "back":
       attemptRock()
