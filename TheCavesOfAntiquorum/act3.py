@@ -81,7 +81,14 @@ def loreRoom():
       sleep(2)
       print("\nin your excitement you failed to notice a book at your feet")
       sleep(1)
-      # continue here
+      print("you pick it up to find the book is torn, burned, and stained\n")
+      sleep(2)
+      print("flipping through the pages there is one excerpt still intact")
+      sleep(2)
+      print("it reads:")
+      sleep(1)
+      printSlow("book")
+      sleep(6)
 
       break
     elif option == "go back" or option == "back":
