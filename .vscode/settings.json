@@ -1,4 +1,4 @@
 {
   "liveshare.allowGuestDebugControl": true,
-  "python.pythonPath": "C:\\Users\\luke\\AppData\\Local\\Programs\\Python\\Python38\\python.exe"
+  "python.pythonPath": "/usr/bin/python3"
 }
