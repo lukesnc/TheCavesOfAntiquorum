@@ -22,6 +22,10 @@ except:
   p1 = Player()
 c = CombatSystem()
 
+# Lore is discovered, and player progresses through series of fights
+def combatRooms():
+  pass
+
 
 # Room after rubble is blown, containing lore of game and shitty dagger
 def loreRoom():
@@ -95,8 +99,7 @@ def loreRoom():
       sleep(6)
       print("\nyou close the book")
       sleep(1)
-
-
+      combatRooms()
       break
     elif option == "go back" or option == "back":
       attemptRock()
