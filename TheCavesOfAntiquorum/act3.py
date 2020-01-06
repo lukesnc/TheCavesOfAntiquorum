@@ -85,10 +85,14 @@ def loreRoom():
       sleep(2)
       print("flipping through the pages there is one excerpt still intact")
       sleep(2)
-      print("it reads:")
+      print("it reads:\n")
       sleep(1)
-      printSlow("book")
+      printSlow("03/14/2005\n")
+      printSlow("I keep finding heiroglyphics all over the place. It keeps portraying some kind of beast. My guess is a god of some sort. There's many references to the sea as well. The more I walk through these ruins the more I get the sense that nothing is real. Almost like I'm merely a character in some small little world, carved out by something higher.\n")
       sleep(6)
+      print("\nyou close the book")
+      sleep(1)
+
 
       break
     elif option == "go back" or option == "back":
