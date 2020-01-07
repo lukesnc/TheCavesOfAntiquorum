@@ -26,6 +26,15 @@ c = CombatSystem()
 def combatRooms():
   pass
 
+# Book player finds on ground
+def readBook():
+  BOOK_TEXT = "I keep finding heiroglyphics all over the place. It keeps portraying some kind of beast. My guess is a god of some sort. There's many references to the sea as well. The more I walk through these ruins the more I get the sense that nothing is real. Almost like I'm merely a character in some small little world, carved out by something higher.\n"
+
+  print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+  printSlow("03/14/2005\n")
+  sleep(2)
+  printSlow(BOOK_TEXT)
+  print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
 
 # Room after rubble is blown, containing lore of game and shitty dagger
 def loreRoom():
@@ -39,7 +48,7 @@ def loreRoom():
   sleep(1.5)
   printVerySlow("Arenam")
   sleep(3)
-  print("\nin the middle of the room sits a podium\n")
+  print("\n\nin the middle of the room sits a podium\n")
   sleep(1)
   while True:
     print("investiage podium or go back")
@@ -91,11 +100,7 @@ def loreRoom():
       sleep(2)
       print("it reads:\n")
       sleep(3)
-      print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-      printSlow("03/14/2005\n")
-      sleep(2)
-      printSlow("I keep finding heiroglyphics all over the place. It keeps portraying some kind of beast. My guess is a god of some sort. There's many references to the sea as well. The more I walk through these ruins the more I get the sense that nothing is real. Almost like I'm merely a character in some small little world, carved out by something higher.\n")
-      print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+      readBook()
       sleep(6)
       print("\nyou close the book")
       sleep(1)
