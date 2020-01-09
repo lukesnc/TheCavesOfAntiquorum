@@ -74,6 +74,7 @@ class CombatSystem():
 
     # Player plays on odd turns, enemy on even
     combatFinished = False
+    ranAway = False
     turn = 1
 
     # COMBAT
@@ -118,7 +119,7 @@ class CombatSystem():
             break
           elif action.lower() == playerActions[2]:
             if canEscape() == True:
-              printSlow("you managed to escape...\n\n")
+              ranAway = True
               combatFinished = True
             else:
               printSlow("you couldn't get away\n\n")
@@ -154,15 +155,19 @@ class CombatSystem():
     # COMBAT DONE - Player won
     p.critChance = p.DEFAULT_CRIT_CHANCE
 
-    printSlow("you defeated the enemy " + e.name + "\n")
-    sleep(1)
-    
-    if turn <= 10:
-      print("a swift victory")
-    elif turn < 10 and turn < 15:
-      print("took you a bit to take 'em down")
+    # Displays the right thing at the end
+    if not ranAway:
+      printSlow("you defeated the enemy " + e.name + "\n")
+      sleep(1) 
+      
+      if turn <= 10:
+        print("a swift victory")
+      elif turn < 10 and turn < 15:
+        print("took you a bit to take 'em down")
+      else:
+        print("try and hurry it up next time")
     else:
-      print("try and hurry it up next time")
+      printSlow("you managed to escape...\n\n")
 
     sleep(3)
     clearScreen()
