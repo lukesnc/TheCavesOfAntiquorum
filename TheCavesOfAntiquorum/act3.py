@@ -20,11 +20,23 @@ try:
   p1 = loadPlayer()
 except:
   p1 = Player()
-c = CombatSystem()
+combatSystem = CombatSystem()
 
 # Lore is discovered, and player progresses through series of fights
 def combatRooms():
-  pass
+  print("you step forward into the corridor in front of you")
+  sleep(1)
+  print("you can hear the footsteps of many enemies ahead")
+  sleep(2)
+  print("your skin crawls")
+  sleep(3)
+  print("\nyou take another step forward")
+  sleep(4)
+  # First enemy
+  combatSystem.testEnemyEncounter(p1, const.FORCE_ENCOUNTER)
+
+  # continue here
+
 
 # Book player finds on ground
 def readBook():
@@ -67,8 +79,10 @@ def loreRoom():
           sleep(1)
           print("you pick up the dagger")
           sleep(1)
-          print("you spin it around, admiring its rust", end='')
-          sleep(2)
+          print("you spin it around", end='')
+          sleep(1.5)
+          print(", admiring its rust", end='')
+          sleep(1.5)
           print(", its fragility", end='')
           sleep(1.5)
           print(", and its shittiness")
@@ -102,7 +116,7 @@ def loreRoom():
       sleep(3)
       readBook()
       sleep(6)
-      print("\nyou close the book")
+      print("\nyou close the book\n\n")
       sleep(1)
       combatRooms()
       break
