@@ -10,3 +10,4 @@ PLAYER_OBJ_BACKUP_PATH = "TheCavesOfAntiquorum/save/player.obj.bak"
 # Encounter rates
 ENCOUNTER_RATE = 1/3 # SWITCH BACK TO 1/3 Chance to encounter enemy at most points in game
 ENCOUNTER_RATE_DANGEROUS = 1/2 # Chance to face enemy in dangerous areas
+FORCE_ENCOUNTER = 1 # Guranteed enemy encounter
