@@ -199,4 +199,4 @@ def start():
   attemptRock()
 
   # combat testing
-  # c.testEnemyEncounter(p1, 1)
+  # combatSystem.testEnemyEncounter(p1, 1)
