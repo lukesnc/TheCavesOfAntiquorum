@@ -46,7 +46,7 @@ class Enemy(object):
   # Combat functions
   def attack(self):
     try:
-      print("the " + self.name + " swings their " + self.weapon.name)
+      print("the " + self.name + " swings its " + self.weapon.name)
     except:
       print("the " + self.name + " attacks")
     sleep(1)
@@ -63,6 +63,8 @@ class Rat(Enemy):
   name = "rat"
   damage = 2
   tauntMsg = "squeak"
+  # For testing
+  # chanceToEncounter = 1
   
   def __init__(self):
     super().__init__()
