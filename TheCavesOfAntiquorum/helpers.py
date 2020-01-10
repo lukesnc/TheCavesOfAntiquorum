@@ -13,8 +13,6 @@ from random import random
 def inputError(text):
   if text.lower() == "quit":
     shutDown()
-  elif text == "pee pee poo poo":
-    launchOriginalGame()
   else:
     printSlow("ERROR - Please use exact phrasing...\n\n")
 
@@ -22,17 +20,6 @@ def inputError(text):
 def shutDown():
   print("Quitting game...")
   sleep(.5)
-  sys.exit()
-
-# Launches first ever draft of the game as an easter egg
-def launchOriginalGame():
-  sleep(1)
-  clearScreen()
-  print("Booting first draft of The Caves of Antiquorum...")
-  sleep(3)
-  clearScreen()
-  sleep(2)
-  from docs import original
   sys.exit()
 
 # Letters print accross line rapidly instead of all appearing at once
