@@ -67,7 +67,7 @@ class Rat(Enemy):
   # chanceToEncounter = 1
   
   def __init__(self):
-    super().__init__()
+    Enemy.__init__(self)
     self.health = 5
 
 class Spider(Enemy):
@@ -76,7 +76,7 @@ class Spider(Enemy):
   tauntMsg = "bug noises"
 
   def __init__(self):
-    super().__init__()
+    Enemy.__init__(self)
     self.health = 10
 
 class UndeadSoldier(Enemy):
@@ -89,7 +89,7 @@ class UndeadSoldier(Enemy):
   ]
 
   def __init__(self):
-    super().__init__()
+    Enemy.__init__(self)
     self.health = 15
     self.weapon = self.getRandomWeapon()
     self.damage = self.weapon.damage
@@ -104,7 +104,7 @@ class Goblin(Enemy):
   ]
 
   def __init__(self):
-    super().__init__()
+    Enemy.__init__(self)
     self.health = 8
     self.weapon = self.getRandomWeapon()
     self.damage = self.weapon.damage
@@ -116,5 +116,5 @@ class Spirit(Enemy):
   chanceToEncounter = 0.01
 
   def __init__(self):
-    super().__init__()
+    Enemy.__init__(self)
     self.health = self.UNKILLABLE
